@@ -2,6 +2,7 @@ __author__ = 'haoyi'
 
 from django.conf.urls import url
 from . import views
+from .api import api_view
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -11,5 +12,11 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
 
-    url(r'^post_api/$', views.JSONResponse.api_post_list, name='api_post_list'),
+    # Api link
+    # login
+    url(r'^token/$', api_view.token, name='token'),
+    # get all post listing
+    url(r'^post_list/$', api_view.JSONResponse.api_post_list, name='api_post_list'),
+    # post the list
+    url(r'^post_post/$', api_view.JSONResponse.api_post, name='api_post'),
 ]

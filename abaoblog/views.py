@@ -100,35 +100,3 @@ def user_logout(request):
     return HttpResponseRedirect('/')
 
 
-class JSONResponse(HttpResponse):
-    """
-    将内容转为JSON格式的HttpResponse
-    """
-    def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
-        kwargs['content_type'] = 'application/json'
-        super(JSONResponse, self).__init__(content, **kwargs)
-
-    @csrf_exempt
-    def api_post_list(request):
-        """
-        展示所有存在的snippet, 或建立新的snippet
-        """
-        if request.method == 'GET':
-            posts = Post.objects.all()
-            serializer = PostSerializers(posts, many=True)
-            return JSONResponse(serializer.data)
-
-        if request.method == 'POST':
-            posts = Post.objects.all()
-            serializer = PostSerializers(posts, many=True)
-            return JSONResponse(serializer.data)
-        if request.method == 'PUT':
-            posts = Post.objects.all()
-            serializer = PostSerializers(posts, many=True)
-            return JSONResponse(serializer.data)
-
-
-        posts = Post.objects.all()
-        serializer = PostSerializers(posts, many=True)
-        return JSONResponse(serializer.data)
