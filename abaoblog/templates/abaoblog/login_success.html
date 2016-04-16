@@ -1,0 +1,12 @@
+{% extends 'abaoblog/base.html' %}
+
+{% block content %}
+    <div>
+        {% if state == "You're successfully logged in!"  %}
+            login success
+        {% endif %}
+        {{state}}
+    </div>
+
+
+{% endblock%}

@@ -1,0 +1,27 @@
+{% extends 'abaoblog/base.html' %}
+
+{% block content %}
+    <h1>New Post</h1>
+    <form method="POST" class='post-form'>
+        {% csrf_token %}
+        <h3>Title :</h3>
+        <div>
+            {{ form.title }}
+        </div>
+
+        <h3>Post :</h3>
+        <div>
+            {{ form.text }}
+        </div>
+
+        <!--<h5>Publish time:</h5>-->
+        <!--<div>-->
+            <!--{{ form.publish_time }}-->
+        <!--</div>-->
+        <!--<h5>Publish Date:</h5>-->
+        <!--<div>-->
+            <!--{{ form.publish_date }}-->
+        <!--</div>-->
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

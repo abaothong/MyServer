@@ -1,0 +1,40 @@
+{% extends 'abaoblog/base.html' %}
+
+{% block content %}
+    <div class="radius-border">
+        <div class="auth-container">
+            <span class="login-container">
+                 <form action="" method="post">
+                    {% csrf_token %}
+                    <!--{{ form.non_field_errors }}-->
+                     <div class="registration-field">
+                        <div class="field-name">Username :</div>
+                        <div class="field-content">{{ form.username }}</div>
+                        <div class="error"><h4>{{ form.username.errors }}</h4></div>
+                     </div>
+
+                     <div class="registration-field">
+                        <div class="field-name">Email :</div>
+                        <div class="field-content">{{ form.email }}</div>
+                        <div class="error"><h4>{{ form.email.errors }}</h4></div>
+                     </div>
+
+                     <div class="registration-field">
+                        <div class="field-name">Password :</div>
+                        <div class="field-content">{{ form.password_1 }}</div>
+                        <div class="error"><h4>{{ form.password_1.errors }}</h4></div>
+                     </div>
+
+                     <div class="registration-field">
+                        <div class="field-name">Password :</div>
+                        <div class="field-content">{{ form.password_2 }}</div>
+                        <div class="error"><h4>{{ form.password_2.errors }}</h4></div>
+                     </div>
+
+                     <input class="register-text-btn" type="submit" value="Register">
+                </form>
+            </span>
+
+        </div>
+    </div>
+{% endblock %}

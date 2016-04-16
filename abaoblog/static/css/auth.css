@@ -1,0 +1,72 @@
+.auth-container{
+    width: 70%;
+    padding: 20px;
+    display:table;
+}
+
+.login-container .login{
+    margin-top: 30px;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 18px;
+    color: LightSkyBlue;
+}
+.login-container{
+    width: 48%;
+    display:table-cell;
+    vertical-align:middle;
+
+}
+
+.login-split{
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 1px solid #e5e5e5;
+    width: 1px;
+
+}
+
+.register-container{
+    width: 48%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.registration-field{
+    margin-top:5px;
+}
+.error{
+    color: red;
+    font-size: 10pt;
+    width: 30%;
+    display: inline-block;
+}
+
+.field-name{
+    width: 20%;
+    display: inline-block;
+}
+.field-content{
+    width: 30%;
+    display: inline-block;
+}
+
+
+
+.login-text-btn{
+    margin-top: 30px;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 18px;
+    color: LightSkyBlue;
+}
+
+.register-text-btn{
+    text-align: left;
+    margin-top: 30px;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 18px;
+    color: LightSkyBlue;
+}

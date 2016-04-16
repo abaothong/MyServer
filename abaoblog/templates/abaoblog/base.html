@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Abao's blog</title>
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+
+
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{% static 'css/general.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog_content.css' %}">
+        <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="top-bar-menu">
+                {% if user.is_authenticated %}
+                    <span class="top-bar-menu-btn"><a href="{% url 'user_logout' %}">Logout</a></span>
+                    <span class="top-bar-menu-btn"><a href="{% url 'post_new' %}">Post</a></span>
+                {% else %}
+                    <span class="top-bar-menu-btn"><a href="{% url 'user_login' %}">Login</a></span>
+                    <span class="top-bar-menu-btn"><a href="{% url 'user_register' %}">Register</a></span>
+                {% endif %}
+
+            </div>
+        </div>
+        <div class="page-header">
+
+            <h1><a href="/">Abao's Blog</a></h1>
+        </div>
+
+        <div>
+            <span class="right-menu">
+
+            </span>
+            <span class="left-content">
+                {% block content %}{% endblock %}
+            </span>
+        </div>
+
+
+    </body>
+</html>

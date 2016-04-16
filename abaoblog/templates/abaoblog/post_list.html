@@ -1,0 +1,22 @@
+{% extends 'abaoblog/base.html' %}
+{% block content %}
+    <div class="radius-border">
+        <div class="post-container">
+            {% for post in posts %}
+                <div class="post">
+                    <h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+                <div class="post-list-readmore"><a href="{% url 'post_detail' pk=post.pk%}">(read more ...)</a></div>
+                <div class="post-detail">
+                    <span class="post-date">{{ post.published_date }}</span>
+                    <span class="post-comment">comment: 100 </span>
+                </div>
+                {% if forloop.last %}
+                {% else %}
+                    <div> <hr class="post-split" /></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
