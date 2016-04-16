@@ -24,12 +24,26 @@ def token(request, format=None):
     password = request.POST["password"]
 
     login_user = authenticate(username=username, password=password)
-    login(request, login_user)
+    if login_user is not None:
+        if login_user.is_active:
+            token = Token.objects.get_or_create(user=login_user)
+            content = {
+                'status_code': "200",
+                'message': "Success",
+                'result': token[0].key,
+            }
 
-    token = Token.objects.get_or_create(user=request.user)
-    content = {
-        'token': token,
-    }
+        else:
+            content = {
+                'status_code': "400",
+                'message': "user inactive",
+            }
+    else:
+        content = {
+            'status_code': "400",
+            'message': "username or password error",
+        }
+
     return Response(content)
 
 
@@ -74,7 +88,7 @@ class JSONResponse(HttpResponse):
             post.save()
 
             content = {
-                'result': "200",
+                'status_code': "200",
                 'message': "Success",
             }
         else:
