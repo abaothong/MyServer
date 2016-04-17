@@ -92,3 +92,5 @@ def user_logout(request):
     return HttpResponseRedirect('/')
 
 
+def api_help(request):
+    return render(request, 'abaoblog/Help.html', {})

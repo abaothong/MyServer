@@ -1,0 +1,95 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Abao's blog Help</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type='text/css'>
+
+    </head>
+    <body>
+        <div>
+            <div><h1>GET /post_list</h1></div>
+            <div><h3>URI Parameters</h3></div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>none</td>
+                    <td>none</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+            <div><h1>POST /token</h1></div>
+            <div><h3>URI Parameters</h3></div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>username</td>
+                    <td>haoyi</td>
+                  </tr>
+                  <tr>
+                    <td>password</td>
+                    <td>123456</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+            <div><h1>POST /post_post</h1></div>
+
+            <div><h3>Header</h3></div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Authorization</td>
+                    <td>token 7f8868c03678eeab25b5458d33182c8836353471</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            <div><h3>URI Parameters</h3></div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>title</td>
+                    <td>post by api</td>
+                  </tr>
+                  <tr>
+                    <td>text</td>
+                    <td>the post is posting by restful api</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </body>
+</html>

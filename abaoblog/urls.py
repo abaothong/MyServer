@@ -13,8 +13,9 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
 
     # Api link
+    url(r'^api_help$', views.api_help, name='help'),
     # login
-    url(r'^token/$', api_view.token, name='token'),
+    url(r'^token$', api_view.token, name='token'),
     # get all post listing
     url(r'^post_list$', api_view.JSONResponse.api_post_list, name='api_post_list'),
     # post the list
