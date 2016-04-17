@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Internal apps
     'abaoblog',
+
+    # Third party apps
     'rest_framework',
     'rest_framework.authtoken',
 ]

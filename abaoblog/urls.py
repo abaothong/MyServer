@@ -16,7 +16,7 @@ urlpatterns = [
     # login
     url(r'^token/$', api_view.token, name='token'),
     # get all post listing
-    url(r'^post_list/$', api_view.JSONResponse.api_post_list, name='api_post_list'),
+    url(r'^post_list$', api_view.JSONResponse.api_post_list, name='api_post_list'),
     # post the list
-    url(r'^post_post/$', api_view.JSONResponse.api_post, name='api_post'),
+    url(r'^post_post$', api_view.JSONResponse.api_post, name='api_post'),
 ]

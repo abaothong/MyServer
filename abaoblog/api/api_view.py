@@ -1,6 +1,5 @@
-from encodings.utf_8 import encode
 from abaoblog.forms import PostForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from django.utils import timezone
 from rest_framework.authtoken.models import Token
 
@@ -19,7 +18,7 @@ from rest_framework.response import Response
 
 
 @api_view(['POST'])
-def token(request, format=None):
+def token(request):
     username = request.POST["username"]
     password = request.POST["password"]
 
@@ -45,9 +44,6 @@ def token(request, format=None):
         }
 
     return Response(content)
-
-
-
 
 
 class JSONResponse(HttpResponse):
@@ -79,7 +75,7 @@ class JSONResponse(HttpResponse):
     @api_view(['POST'])
     @authentication_classes((TokenAuthentication,))
     @permission_classes((IsAuthenticated,))
-    def api_post(request, format=None):
+    def api_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)

@@ -1,5 +1,3 @@
-import textwrap
-
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -11,12 +9,6 @@ from abaoblog.forms import PostForm, RegistrationForm
 from abaoblog.configure import post_conf
 from abaoblog.common import smart_truncate
 
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
-from abaoblog.api.serializers import PostSerializers
-from django.views.decorators.csrf import csrf_exempt
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
