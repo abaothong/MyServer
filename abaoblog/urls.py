@@ -3,7 +3,7 @@ __author__ = 'haoyi'
 from django.conf.urls import url
 from . import views
 from .api import api_view
-from .test import test
+# from .test import test
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
