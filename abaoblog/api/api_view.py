@@ -15,7 +15,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 
-
+# email
+from django.core.mail import EmailMessage
 
 @api_view(['POST'])
 def token(request):
@@ -45,6 +46,17 @@ def token(request):
 
     return Response(content)
 
+
+@api_view(['POST','GET'])
+def send_email(request):
+    email = EmailMessage('title', 'body', to=['thonghaoyi@gmail.com'])
+    result = email.send()
+    content = {
+            'status_code': "200",
+            'message': result,
+        }
+
+    return Response(content)
 
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):

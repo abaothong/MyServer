@@ -3,6 +3,7 @@ __author__ = 'haoyi'
 from django.conf.urls import url
 from . import views
 from .api import api_view
+from .test import test
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -20,4 +21,10 @@ urlpatterns = [
     url(r'^post_list$', api_view.JSONResponse.api_post_list, name='api_post_list'),
     # post the list
     url(r'^post_post$', api_view.JSONResponse.api_post, name='api_post'),
+
+    # tesing
+    url(r'^comment', test.JSONResponse.comment, name='comment'),
+    url(r'^show', test.show, name='show'),
+
+    url(r'^email$', api_view.send_email, name='send'),
 ]
