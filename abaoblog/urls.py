@@ -22,9 +22,9 @@ urlpatterns = [
     # post the list
     url(r'^post_post$', api_view.JSONResponse.api_post, name='api_post'),
 
-    # tesing
-    url(r'^comment', test.JSONResponse.comment, name='comment'),
-    url(r'^show', test.show, name='show'),
+    # # tesing
+    # url(r'^comment', test.JSONResponse.comment, name='comment'),
+    # url(r'^show', test.show, name='show'),
 
     url(r'^email$', api_view.send_email, name='send'),
 ]
